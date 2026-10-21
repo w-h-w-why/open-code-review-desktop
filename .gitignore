@@ -5,8 +5,10 @@ release-installer/
 dist/
 .vite/
 *.log
-shot-*.png
+/shot-*.png
 .DS_Store
+Thumbs.db
+Desktop.ini
 *.tsbuildinfo
 
 # Local credentials and private configuration
