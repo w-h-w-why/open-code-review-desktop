@@ -21,9 +21,11 @@
 
 | 依赖 | 说明 |
 | --- | --- |
-| Node.js | 20.19+ 或 22.12+（开发与打包） |
-| Git | 2.41 或更高；差异类审查依赖 Git |
+| Node.js | 建议使用 20.19+ 或 22.12+（开发与打包兼容性要求） |
+| Git | 建议使用 2.41 或更高；差异类审查依赖 Git |
 | ocr | `npm install -g @alibaba-group/open-code-review` |
+
+Node.js 和 Git 版本目前用于兼容性参考，桌面端启动时会检查命令是否可执行，但不会强制比较最低版本。
 
 首次启动时如果没有找到 `ocr`，界面会显示环境检查与一键安装页，安装日志直接显示在窗口里。
 
@@ -45,6 +47,21 @@ ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/ npm install
 
 ```bash
 ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/ node install.js
+```
+
+Windows PowerShell 使用下面的写法设置镜像：
+
+```powershell
+$env:ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/"
+npm install
+```
+
+如果需要重新安装 Electron：
+
+```powershell
+$env:ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/"
+cd node_modules/electron
+node install.js
 ```
 
 ## 配置模型
@@ -83,7 +100,7 @@ npm run package
 ```
 
 - `release/win-unpacked/`：免安装的便携版，直接运行 `OpenCodeReview.exe`。
-- `release-installer/OpenCodeReview Setup 0.1.0.exe`：Windows x64 NSIS 安装包。
+- `release-installer/OpenCodeReview Setup <version>.exe`：Windows x64 NSIS 安装包，文件名中的版本号来自 `package.json`。
 
 脚本先生成便携版，再从该目录构建安装包，避免在部分 Windows 环境中解压重命名被安全软件短暂锁定。应用图标来自项目 Logo，位于 `resources/icon.png`。
 
@@ -100,8 +117,12 @@ src/
     services/settings.ts 桌面端偏好与最近项目
   preload/              contextBridge 暴露的受控 API
   shared/               主进程与渲染进程共享的类型与供应商目录
-  renderer/             React 界面
+  renderer/
+    index.html          渲染进程入口页面
+    src/                React 界面、组件、样式与资源
 scripts/gen-providers.mjs  从上游 providers.go 生成供应商目录
+resources/              应用图标与 Logo
+config.example.json     配置模板（仅包含占位符）
 ```
 
 ### 与命令行的对应关系
@@ -110,9 +131,9 @@ scripts/gen-providers.mjs  从上游 providers.go 生成供应商目录
 | --- | --- |
 | 开始审查 | `ocr review --format json [--from/--to/--commit/--resume ...]` |
 | 全量扫描 | `ocr scan --format json [--path ...]` |
-| 预览文件 | `ocr review/scan --preview` |
+| 预览文件 | `ocr review --format text --preview` 或 `ocr scan --format text --preview` |
 | 历史列表 | `ocr session list --repo <repo> --json --limit 0` |
-| 会话详情 | `ocr session show/comments --repo <repo> --json <id>` |
+| 会话详情 | `ocr session show --repo <repo> --json <id>`；审查评论使用 `ocr session comments --repo <repo> --json <id>` |
 | 会话对比 | `ocr session compare --repo <repo> --json <before> <after>` |
 | 导出 HTML | `ocr session export --repo <repo> <id> -o <path>` |
 | 删除会话 | `ocr session rm --yes <id>` |
@@ -123,7 +144,7 @@ scripts/gen-providers.mjs  从上游 providers.go 生成供应商目录
 - 渲染进程启用 `contextIsolation`，关闭 `nodeIntegration`，只通过 preload 暴露白名单 API。
 - 配置中的 `api_key` / `auth_token` 在主进程读取时即被脱敏，不会把完整密钥发送到界面。
 - 外部链接只允许 `http/https`，并在系统浏览器中打开。
-- 会话与配置文件沿用命令行的本机目录（`~/.opencodereview`），桌面端不额外上传任何数据。
+- 会话与配置文件沿用命令行的本机目录（`~/.opencodereview`）。桌面端不额外收集或上传数据；模型请求由本机 `ocr` CLI 按用户配置发送给相应服务商。
 
 ## 已知限制
 

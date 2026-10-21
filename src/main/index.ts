@@ -267,9 +267,10 @@ function registerIpc(): void {
   ipcMain.handle('config:migrateCustomProvider', (_event, name: string) =>
     migrateCustomProvider(name)
   )
-  ipcMain.handle('config:testConnection', (_event, req?: TestConnectionRequest) =>
-    testConnection(req?.draft)
-  )
+  ipcMain.handle('config:testConnection', (_event, req?: TestConnectionRequest) => {
+    const settings = readSettings()
+    return testConnection(req?.draft, settings.cliPath || undefined)
+  })
   ipcMain.handle('config:providers', () => listProviders())
 
   ipcMain.handle(

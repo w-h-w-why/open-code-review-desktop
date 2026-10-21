@@ -205,8 +205,19 @@ export function saveRawConfigJson(json: string): OcrConfigView {
   return readConfigView()
 }
 
-export async function testConnection(draft?: SaveProviderRequest): Promise<TestConnectionResult> {
-  const cli = resolveCli()
+/**
+ * Test the configured provider without exposing or overwriting the user's saved key.
+ *
+ * `draft` is an optional unsaved provider configuration used by the settings preview.
+ * `cliPath` is the saved explicit `ocr` executable path, when present; omitting it
+ * preserves automatic resolution. The result reports the CLI outcome and errors are
+ * converted to the existing `TestConnectionResult` shape by this service.
+ */
+export async function testConnection(
+  draft?: SaveProviderRequest,
+  cliPath?: string
+): Promise<TestConnectionResult> {
+  const cli = resolveCli(cliPath)
   let tempHome: string | null = null
   let env = process.env
 
