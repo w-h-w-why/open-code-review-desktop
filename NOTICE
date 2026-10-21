@@ -1,0 +1,16 @@
+OpenCodeReview Desktop
+Copyright 2026 OpenCodeReview Desktop Contributors
+
+This product is a desktop interface for OpenCodeReview.
+
+It includes or depends on:
+  OpenCodeReview
+  Copyright 2026 Alibaba
+  https://github.com/alibaba/open-code-review
+  Licensed under the Apache License, Version 2.0.
+
+The OpenCodeReview name and logo are used to identify the upstream project.
+The desktop application does not modify the upstream review implementation; it
+invokes the `ocr` command-line tool installed on the local machine.
+
+The application icon was derived from the OpenCodeReview logo (Apache-2.0).

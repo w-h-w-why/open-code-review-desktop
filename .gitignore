@@ -1,0 +1,20 @@
+node_modules/
+out/
+release/
+release-installer/
+dist/
+.vite/
+*.log
+shot-*.png
+.DS_Store
+*.tsbuildinfo
+
+# Local credentials and private configuration
+.env
+.env.*
+!.env.example
+config.local.json
+config.*.local.json
+credentials*.json
+*.pem
+*.key

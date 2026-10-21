@@ -1,0 +1,12 @@
+{
+  "provider": "openai",
+  "model": "gpt-5.5",
+  "language": "English",
+  "effort": "",
+  "max_tokens": 0,
+  "providers": {
+    "openai": {
+      "api_key": "YOUR_OPENAI_API_KEY_HERE"
+    }
+  }
+}

@@ -1,0 +1,453 @@
+[
+  {
+    "name": "anthropic",
+    "displayName": "Anthropic Claude API",
+    "protocol": "anthropic",
+    "models": [
+      "claude-opus-5",
+      "claude-sonnet-5",
+      "claude-opus-4-8",
+      "claude-opus-4-7",
+      "claude-opus-4-6",
+      "claude-sonnet-4-6"
+    ],
+    "baseURL": "https://api.anthropic.com",
+    "envVar": "ANTHROPIC_API_KEY"
+  },
+  {
+    "name": "bedrock",
+    "displayName": "AWS Bedrock (Anthropic models)",
+    "protocol": "anthropic-bedrock",
+    "models": [
+      "us.anthropic.claude-opus-5",
+      "us.anthropic.claude-sonnet-5",
+      "us.anthropic.claude-opus-4-8",
+      "us.anthropic.claude-opus-4-7",
+      "us.anthropic.claude-sonnet-4-6",
+      "global.anthropic.claude-opus-5",
+      "global.anthropic.claude-sonnet-5",
+      "global.anthropic.claude-opus-4-8"
+    ],
+    "ambientAuth": true
+  },
+  {
+    "name": "chatgpt",
+    "displayName": "ChatGPT plan (Sign in with ChatGPT preview)",
+    "protocol": "openai-responses",
+    "models": [],
+    "baseURL": "https://api.openai.com/v1",
+    "externalAuth": true
+  },
+  {
+    "name": "openai",
+    "displayName": "OpenAI API",
+    "protocol": "openai",
+    "models": [
+      "gpt-5.5",
+      "gpt-5.4",
+      "gpt-5.4-mini"
+    ],
+    "baseURL": "https://api.openai.com/v1",
+    "envVar": "OPENAI_API_KEY"
+  },
+  {
+    "name": "openai-responses",
+    "displayName": "OpenAI Responses API",
+    "protocol": "openai-responses",
+    "models": [
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna"
+    ],
+    "baseURL": "https://api.openai.com/v1",
+    "envVar": "OPENAI_RESPONSES_API_KEY"
+  },
+  {
+    "name": "openrouter",
+    "displayName": "OpenRouter",
+    "protocol": "openai",
+    "models": [
+      "anthropic/claude-fable-5.1",
+      "openai/gpt-5.6-sol",
+      "anthropic/claude-opus-5",
+      "openai/gpt-6-astra",
+      "moonshotai/kimi-k3"
+    ],
+    "baseURL": "https://openrouter.ai/api/v1",
+    "envVar": "OPENROUTER_API_KEY"
+  },
+  {
+    "name": "edenai",
+    "displayName": "Eden AI",
+    "protocol": "openai",
+    "models": [
+      "anthropic/claude-opus-4-5",
+      "anthropic/claude-sonnet-4-5",
+      "anthropic/claude-haiku-4-5",
+      "openai/gpt-5.1",
+      "openai/gpt-5.1-codex",
+      "google/gemini-3.1-pro-preview",
+      "mistral/devstral-medium-latest",
+      "mistral/codestral-latest",
+      "deepseek/deepseek-v4-pro",
+      "xai/grok-4"
+    ],
+    "baseURL": "https://api.edenai.run/v3",
+    "envVar": "EDENAI_API_KEY"
+  },
+  {
+    "name": "gemini",
+    "displayName": "Google Gemini API",
+    "protocol": "openai",
+    "models": [
+      "gemini-3-flash-preview",
+      "gemini-3.1-flash-lite",
+      "gemini-3.1-pro",
+      "gemini-3.5-flash-lite",
+      "gemini-3.5-flash",
+      "gemini-3.6-flash"
+    ],
+    "baseURL": "https://generativelanguage.googleapis.com/v1beta/openai",
+    "envVar": "GEMINI_API_KEY"
+  },
+  {
+    "name": "dashscope",
+    "displayName": "Alibaba DashScope API",
+    "protocol": "openai",
+    "models": [
+      "qwen3.8-max",
+      "qwen3.7-max",
+      "qwen3.7-plus",
+      "qwen3.6-plus",
+      "qwen3.6-flash",
+      "deepseek-v4-pro",
+      "deepseek-v4-flash",
+      "kimi-k2.7-code",
+      "glm-5.2",
+      "MiniMax-M2.5"
+    ],
+    "baseURL": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "envVar": "DASHSCOPE_API_KEY"
+  },
+  {
+    "name": "dashscope-tokenplan",
+    "displayName": "Alibaba DashScope Token Plan API",
+    "protocol": "openai",
+    "models": [
+      "qwen3.8-max",
+      "qwen3.7-max",
+      "qwen3.7-plus",
+      "qwen3.6-plus",
+      "qwen3.6-flash",
+      "deepseek-v4-pro",
+      "deepseek-v4-flash",
+      "kimi-k2.7-code",
+      "kimi-k2.6",
+      "kimi-k2.5",
+      "glm-5.2",
+      "glm-5.1",
+      "glm-5",
+      "MiniMax-M2.5"
+    ],
+    "baseURL": "https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+    "envVar": "DASHSCOPE_TOKENPLAN_KEY"
+  },
+  {
+    "name": "volcengine",
+    "displayName": "Volcano Engine Ark API",
+    "protocol": "openai",
+    "models": [
+      "doubao-seed-evolving",
+      "doubao-seed-2-1-pro-260628",
+      "doubao-seed-2-1-turbo-260628",
+      "doubao-seed-2-0-lite-260428",
+      "doubao-seed-2-0-mini-260428",
+      "doubao-seed-2-0-pro-260215"
+    ],
+    "baseURL": "https://ark.cn-beijing.volces.com/api/v3",
+    "envVar": "ARK_API_KEY"
+  },
+  {
+    "name": "deepseek",
+    "displayName": "DeepSeek API",
+    "protocol": "openai",
+    "models": [
+      "deepseek-v4-pro",
+      "deepseek-flash"
+    ],
+    "baseURL": "https://api.deepseek.com",
+    "envVar": "DEEPSEEK_API_KEY"
+  },
+  {
+    "name": "tencent-tokenhub",
+    "displayName": "Tencent TokenHub API",
+    "protocol": "openai",
+    "models": [
+      "deepseek-v4-pro",
+      "deepseek-v4-flash",
+      "glm-5.2",
+      "glm-5.1",
+      "glm-5",
+      "glm-5-turbo",
+      "kimi-k2.7-code",
+      "kimi-k2.7-code-highspeed",
+      "kimi-k2.6",
+      "minimax-m3",
+      "minimax-m2.7"
+    ],
+    "baseURL": "https://tokenhub.tencentmaas.com/v1",
+    "envVar": "TENCENT_TOKENHUB_API_KEY"
+  },
+  {
+    "name": "hy-tokenplan",
+    "displayName": "Tencent Hunyuan Token Plan API",
+    "protocol": "openai",
+    "models": [
+      "hy3"
+    ],
+    "baseURL": "https://api.lkeap.cloud.tencent.com/plan/v3",
+    "envVar": "TENCENT_HUNYUAN_TOKENPLAN_KEY"
+  },
+  {
+    "name": "iflytek",
+    "displayName": "iFlytek Spark API",
+    "protocol": "openai",
+    "models": [
+      "4.0Ultra",
+      "generalv3.5",
+      "max-32k",
+      "generalv3",
+      "pro-128k",
+      "lite"
+    ],
+    "baseURL": "https://spark-api-open.xf-yun.com/v1",
+    "envVar": "SPARK_API_KEY"
+  },
+  {
+    "name": "kimi",
+    "displayName": "Kimi Moonshot API",
+    "protocol": "openai",
+    "models": [
+      "kimi-k3",
+      "kimi-k2.7-code",
+      "kimi-k2.7-code-highspeed",
+      "kimi-k2.6",
+      "kimi-k2.5"
+    ],
+    "baseURL": "https://api.moonshot.cn/v1",
+    "envVar": "MOONSHOT_API_KEY"
+  },
+  {
+    "name": "kimi-global",
+    "displayName": "Kimi Moonshot API (Global)",
+    "protocol": "openai",
+    "models": [
+      "kimi-k3",
+      "kimi-k2.7-code",
+      "kimi-k2.7-code-highspeed",
+      "kimi-k2.6",
+      "kimi-k2.5"
+    ],
+    "baseURL": "https://api.moonshot.ai/v1",
+    "envVar": "MOONSHOT_GLOBAL_API_KEY"
+  },
+  {
+    "name": "z-ai",
+    "displayName": "Z.AI API",
+    "protocol": "openai",
+    "models": [
+      "glm-5.3",
+      "glm-5.2",
+      "glm-5.1",
+      "glm-5",
+      "glm-5-turbo",
+      "glm-4.7"
+    ],
+    "baseURL": "https://open.bigmodel.cn/api/paas/v4",
+    "envVar": "Z_AI_API_KEY"
+  },
+  {
+    "name": "z-ai-coding",
+    "displayName": "Z.AI Coding Plan API",
+    "protocol": "openai",
+    "models": [
+      "glm-5.3",
+      "glm-5.2",
+      "glm-5.1",
+      "glm-5-turbo",
+      "glm-4.7"
+    ],
+    "baseURL": "https://open.bigmodel.cn/api/coding/paas/v4",
+    "envVar": "Z_AI_CODING_API_KEY"
+  },
+  {
+    "name": "mimo",
+    "displayName": "Xiaomi MiMo API",
+    "protocol": "openai",
+    "models": [
+      "mimo-v2.5-pro",
+      "mimo-v2.5"
+    ],
+    "baseURL": "https://api.xiaomimimo.com/v1",
+    "envVar": "MIMO_API_KEY"
+  },
+  {
+    "name": "minimax",
+    "displayName": "MiniMax API",
+    "protocol": "openai",
+    "models": [
+      "MiniMax-M3",
+      "MiniMax-M2.7",
+      "MiniMax-M2.7-highspeed",
+      "MiniMax-M2.5",
+      "MiniMax-M2.5-highspeed"
+    ],
+    "baseURL": "https://api.minimax.io/v1",
+    "envVar": "MINIMAX_GLOBAL_API_KEY"
+  },
+  {
+    "name": "minimax-cn",
+    "displayName": "MiniMax CN API",
+    "protocol": "openai",
+    "models": [
+      "MiniMax-M3",
+      "MiniMax-M2.7",
+      "MiniMax-M2.7-highspeed",
+      "MiniMax-M2.5",
+      "MiniMax-M2.5-highspeed"
+    ],
+    "baseURL": "https://api.minimaxi.com/v1",
+    "envVar": "MINIMAX_API_KEY"
+  },
+  {
+    "name": "baidu-qianfan",
+    "displayName": "Baidu Qianfan API",
+    "protocol": "openai",
+    "models": [
+      "ernie-5.1",
+      "ernie-5.0",
+      "ernie-x1.1",
+      "ernie-x1-turbo-32k-preview",
+      "deepseek-v4-pro",
+      "deepseek-v4-flash",
+      "glm-5.2",
+      "glm-5.1",
+      "glm-5",
+      "kimi-k2.6"
+    ],
+    "baseURL": "https://qianfan.baidubce.com/v2",
+    "envVar": "QIANFAN_API_KEY"
+  },
+  {
+    "name": "ollama-cloud",
+    "displayName": "Ollama Cloud API",
+    "protocol": "openai",
+    "models": [
+      "deepseek-v4-flash",
+      "deepseek-v4-pro",
+      "gemma4:31b",
+      "glm-5.1",
+      "glm-5.2",
+      "gpt-oss:120b",
+      "gpt-oss:20b",
+      "kimi-k2.5",
+      "kimi-k2.6",
+      "kimi-k2.7-code",
+      "minimax-m2.5",
+      "minimax-m2.7",
+      "minimax-m3",
+      "mistral-large-3:675b",
+      "nemotron-3-nano:30b",
+      "nemotron-3-super",
+      "nemotron-3-ultra",
+      "qwen3.5:397b"
+    ],
+    "baseURL": "https://ollama.com/v1",
+    "envVar": "OLLAMA_API_KEY"
+  },
+  {
+    "name": "novita",
+    "displayName": "Novita API",
+    "protocol": "openai",
+    "models": [
+      "moonshotai/kimi-k3",
+      "zai-org/glm-5.2",
+      "deepseek/deepseek-v4-flash-0731"
+    ],
+    "baseURL": "https://api.novita.ai/openai",
+    "envVar": "NOVITA_API_KEY"
+  },
+  {
+    "name": "xai",
+    "displayName": "xAI Grok API",
+    "protocol": "openai",
+    "models": [
+      "grok-4.6",
+      "grok-4.5",
+      "grok-4.3"
+    ],
+    "baseURL": "https://api.x.ai/v1",
+    "envVar": "XAI_API_KEY"
+  },
+  {
+    "name": "litellm",
+    "displayName": "LiteLLM AI Gateway",
+    "protocol": "openai",
+    "models": [
+      "anthropic/claude-sonnet-4-6",
+      "anthropic/claude-opus-4-6",
+      "anthropic/claude-haiku-4-5",
+      "openai/gpt-4o",
+      "openai/gpt-5.4",
+      "openai/o3",
+      "vertex_ai/gemini-2.5-flash",
+      "vertex_ai/gemini-2.5-pro",
+      "bedrock/anthropic.claude-sonnet-4-6-v1",
+      "groq/llama-4-scout-17b-16e-instruct",
+      "mistral/mistral-large-latest",
+      "deepseek/deepseek-chat"
+    ],
+    "baseURL": "http://localhost:4000/v1",
+    "envVar": "LITELLM_API_KEY"
+  },
+  {
+    "name": "siliconflow",
+    "displayName": "SiliconFlow API",
+    "protocol": "openai",
+    "models": [
+      "deepseek-ai/DeepSeek-V4-Pro",
+      "deepseek-ai/DeepSeek-V4-Flash",
+      "Qwen/Qwen3.6-27B",
+      "moonshotai/Kimi-K2.7-Code",
+      "zai-org/GLM-5.2"
+    ],
+    "baseURL": "https://api.siliconflow.com/v1",
+    "envVar": "SILICONFLOW_GLOBAL_API_KEY"
+  },
+  {
+    "name": "siliconflow-cn",
+    "displayName": "SiliconFlow CN API",
+    "protocol": "openai",
+    "models": [
+      "deepseek-ai/DeepSeek-V4-Pro",
+      "deepseek-ai/DeepSeek-V4-Flash",
+      "Qwen/Qwen3.6-27B",
+      "moonshotai/Kimi-K2.7-Code",
+      "zai-org/GLM-5.2"
+    ],
+    "baseURL": "https://api.siliconflow.cn/v1",
+    "envVar": "SILICONFLOW_API_KEY"
+  },
+  {
+    "name": "mistral",
+    "displayName": "Mistral AI",
+    "protocol": "openai",
+    "models": [
+      "codestral-latest",
+      "mistral-large-latest",
+      "mistral-small-latest"
+    ],
+    "baseURL": "https://api.mistral.ai/v1",
+    "envVar": "MISTRAL_API_KEY"
+  }
+]
